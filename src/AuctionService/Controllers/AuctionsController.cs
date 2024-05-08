@@ -81,7 +81,7 @@ public class AuctionsController : ControllerBase
         return BadRequest("Issue updating your auction");
     }
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteAuction(Guid id)
     {
         var auction = await _context.Auctions.FindAsync(id);
